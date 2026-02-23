@@ -198,7 +198,7 @@ class GarminClient:
             logger.info("Performing new Garmin authentication")
             # garth.login(self.email, self.password, prompt_mfa=lambda: input("Enter MFA code: "))
             # garth.login(self.email, self.password)
-            result1, result2 = garth.login(email, password, return_on_mfa=True)
+            result1, result2 = garth.login(self.email, self.password, return_on_mfa=True)
             if result1 == "needs_mfa":
                 # MFA is required - get code from your custom flow
                 mfa_code = "279669"
