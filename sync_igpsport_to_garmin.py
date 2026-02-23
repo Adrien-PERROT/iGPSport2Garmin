@@ -196,7 +196,7 @@ class GarminClient:
 
             # Perform a new login
             logger.info("Performing new Garmin authentication")
-            garth.login(self.email, self.password, prompt_mfa="109237")
+            garth.login(self.email, self.password, prompt_mfa=lambda: "881650")
             # garth.login(self.email, self.password)
             
 
