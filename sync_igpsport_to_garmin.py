@@ -196,16 +196,8 @@ class GarminClient:
 
             # Perform a new login
             logger.info("Performing new Garmin authentication")
-            # garth.login(self.email, self.password, prompt_mfa=lambda: input("Enter MFA code: "))
+            garth.login(self.email, self.password, prompt_mfa="109237")
             # garth.login(self.email, self.password)
-            result1, result2 = garth.login(self.email, self.password, return_on_mfa=True)
-            if result1 == "needs_mfa":
-                # MFA is required - get code from your custom flow
-                mfa_code = "279669"
-                garth.resume_login(result2, mfa_code)
-            else:
-                # No MFA required - result1 and result2 are the tokens
-                oauth1, oauth2 = result1, result2
             
 
             # Save the session for future use
